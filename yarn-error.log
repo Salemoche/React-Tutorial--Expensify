@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add express
+  /usr/local/bin/node /usr/local/bin/yarn add chalk --dev
 
 PATH: 
   /Users/itz/Desktop/Salemoche/Okomo/_Development/mongodb/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
@@ -14,8 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:50:26)
+  Error: EACCES: permission denied, rmdir '/Users/itz/Desktop/Salemoche/Web/Tutorials/React/React-Full-Stack-Tutorial/Udemy-Course/React-Tutorial--Expensify/node_modules/.node-notifier.DELETE/vendor/terminal-notifier.app/Contents'
 
 npm manifest: 
   {
@@ -29,7 +28,9 @@ npm manifest:
       "build:dev": "webpack",
       "build:prod": "webpack -p --env production",
       "dev-server": "webpack-dev-server",
-      "test": "jest --watch"
+      "test": "jest --watch",
+      "start": "node server/server.js",
+      "heroku-postbuild": "yarn run build:prod"
     },
     "dependencies": {
       "babel-cli": "6.24.1",
@@ -40,6 +41,7 @@ npm manifest:
       "babel-preset-env": "^1.7.0",
       "babel-preset-react": "^6.24.1",
       "css-loader": "^1.0.0",
+      "express": "^4.16.3",
       "live-server": "^1.2.0",
       "mini-css-extract-plugin": "^0.4.1",
       "moment": "^2.22.2",
@@ -2381,7 +2383,7 @@ Lockfile:
       jest-message-util "^23.4.0"
       jest-regex-util "^23.3.0"
   
-  express@^4.16.2:
+  express@^4.16.2, express@^4.16.3:
     version "4.16.3"
     resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
     dependencies:
